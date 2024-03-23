@@ -1,3 +1,6 @@
+//----------Hari-------------
+
+
 //------------ audio -------------
 
 
@@ -21,12 +24,20 @@ function playButton2(){
 // -------------- catatan ----------
 
 const catatan = document.querySelector("#note1");
+const animasi = document.querySelector(".login");
+
+
 var i = 1;
+
 // const catatan2 = document.querySelector("#note2");
 function notes(){
+  
     document.querySelector(".btnPesan").style.display = "none";
     if(i==1){
-    document.getElementById("note1").innerHTML="Mudah2 an suka yo dengan buatanku. Hehe , tapii ini khususs loo. First time to build this. agak2 canggung sii "
+      animasi.style.animation = "fade2 1s" ;
+      
+    catatan.innerHTML = catatan2[i-1];
+    
     document.getElementById("balas").style.display = "none";
     document.getElementById("balas2").style.display = "none";
     document.getElementById("hr").style.display = "none";
@@ -35,15 +46,24 @@ function notes(){
     
      i++;
     }else if(i==2){
-        document.getElementById("note1").innerHTML="Aku ada kabar buatmu niii, kepo yaaa? hehe"
-        setTimeout(display,4000);
+      animasi.style.animation = "fade 1s" ;
+       catatan.innerHTML = catatan2[i-1]; 
+       setTimeout(display,2000);
         i++;
+        
     }else if(i==3){
-        document.getElementById("note1").innerHTML="Sebenernyaa, ini si udah lama mau ku buat tapi cuman takut ajaa. Akhirnya memberanikan diri buat. Yang terpenting buat bahagia. toh aku juga seneng buatnya sampe berjam2 pun tak lakukan wkwk  "
+      animasi.style.animation = "fade2 1s" ;
+        catatan.innerHTML= catatan2[i-1];
         setTimeout(display,4000);
         i++;
     }else if(i==4){
-        document.getElementById("note1").innerHTML="Langsung saja kita mainn gamee..."
+        animasi.style.animation = "fade 1s" ;
+        catatan.innerHTML= catatan2[i-1]
+        setTimeout(displayKado,2000);
+        i++;
+    }else if(i==5){
+        kado.style.display = "none";
+        catatan.innerHTML= catatan2[i-1]
         setTimeout(display,4000);
         i++;
     }
@@ -54,7 +74,14 @@ function notes(){
 
       const btnPesan = document.querySelector(".btnPesan");
       const emotlucu = document.querySelector(".emotlucu");
-      
+      const kado = document.querySelector(".img_kado");
+
+      function displayKado(){
+        kado.style.display = "flex";
+        playNotif();
+      }
+
+
       function display(){
         // emotlucu.style.display = "flex";
         btnPesan.style.display = "flex";
@@ -83,4 +110,24 @@ function balas(){
   playButton1();
   setTimeout(display,4000);
   notes();
+  
   }
+
+// --------------message typing---------------
+
+  function message(pesan){
+    let currentText = "";
+    let currentWord = "";
+   
+    let letterCount = 0;
+    function messageType(){
+    currentWord = pesan;
+    currentText = currentWord.slice(0,++letterCount);
+    document.getElementById("note1").innerHTML = currentText;
+    if(currentText.length != currentWord.length){
+      setTimeout(messageType,80);
+      }
+    }
+    messageType();
+  }
+  

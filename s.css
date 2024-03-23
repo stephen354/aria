@@ -1,17 +1,40 @@
+:root {
+  --ijo: #16a085;
+  --ijoHover: #074337;
+  --gradient: linear-gradient(
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.9)
+  );
+  --ungu: rgb(99, 15, 94);
+}
+
 body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("img/655047.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
   overflow: hidden;
-
   display: flex;
   justify-content: center;
   align-items: center;
 
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.time {
+  position: absolute;
+  left: 50%;
+  font-size: 5rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  color: white;
+  transform: translateX(-50%) translateY(-200px);
+}
+.time p {
+  font-size: 1.1rem;
+  font-weight: 300;
 }
 
 .login {
@@ -22,7 +45,29 @@ body {
   );
   box-shadow: 0px 5px 5px rgba(0 0 0/0.5);
   border-radius: 25px;
+  animation: fade 1s;
 }
+@keyframes fade {
+  0% {
+    margin-top: 50px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0;
+    opacity: 100%;
+  }
+}
+@keyframes fade2 {
+  0% {
+    margin-top: 50px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0;
+    opacity: 100%;
+  }
+}
+
 .login img {
   max-width: 35px;
   border: 2px black;
@@ -72,10 +117,31 @@ body {
   position: absolute;
   top: -10px;
   right: -10px;
-
   border-radius: 50%;
   background: red;
   color: white;
+}
+
+.img_kado {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(40px);
+  background: none;
+  border: none;
+  animation: 1s btnPesan linear infinite;
+}
+.img_kado img {
+  min-width: 80px;
+}
+
+.titleBingkai {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  font-family: "Sacramento", cursive;
+  font-weight: 800;
+  font-size: 3rem;
 }
 
 @keyframes btnPesan {
@@ -104,3 +170,70 @@ body {
 .peluk {
   min-width: 70px;
 }
+/* 
+.nomorTes {
+  position: absolute;
+  left: 50%;
+  font-size: 1rem;
+  font-weight: 600;
+  transform: translateX(-50%) translateY(-40px);
+  background: var(--ungu);
+  padding: 15px 22px 15px 22px;
+  border-radius: 50%;
+  border: 2px solid white;
+  color: white;
+}
+.soal1 {
+  display: none;
+} 
+
+.soal1 button {
+  width: 30%;
+  border-radius: 20px;
+  padding: 5px 0 5px 0;
+  border: 3px solid var(--ijo);
+  color: var(--ijo);
+  font-weight: 600;
+}
+.soal1 button:hover {
+  background-color: #074337;
+  color: white;
+  border: 3px solid var(--ijoHover);
+}
+.soal1 span {
+}
+
+.soal1 .one,
+.three {
+  position: absolute;
+  left: 44%;
+  font-size: 16px;
+  font-weight: 600;
+  transform: translateX(-50%) translateY(-20px);
+  background: var();
+  border: 3px solid var(--ungu);
+  padding: 0 10px 5px 10px;
+  border-radius: 50%;
+  background: var(--ungu);
+  color: white;
+}
+.soal1 .three {
+  padding: 0 11px 5px 11px;
+}
+.soal1 .two,
+.four {
+  position: absolute;
+  left: 62%;
+  font-size: 16px;
+  font-weight: 600;
+  transform: translateX(-50%) translateY(-20px);
+  background: var();
+  border: 3px solid var(--ungu);
+  padding: 0px 12px 5px 12px;
+  border-radius: 50%;
+  background: var(--ungu);
+  color: white;
+}
+.soal1 .four {
+  padding: 0px 8px 5px 8px;
+} */

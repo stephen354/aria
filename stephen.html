@@ -12,21 +12,79 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link rel="icon" href="img/icon gibli.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <title>To Aria</title>
+    <style>
+            
+  
 
-    <title>Hello, world!</title>
+    </style>
   </head>
 
   <body>
+    
+    <div class="time container-fluid text-center"><a id="time">10:00</a> 
+      <p id="hari">Wednesday, 10 March</p></div>
+      <script>
+        var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+          var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
+
+          let time = new Date();
+          let minutes = time.getMinutes() > 9 ? time.getMinutes() : "0"+time.getMinutes();
+          let tanggal = myDays[time.getDay()] + ", " + time.getDate() + " " + months[time.getMonth()] ;
+
+          document.getElementById('time').innerHTML = time.getHours() + ":" + minutes;
+          document.getElementById('hari').innerHTML = tanggal;
+
+      </script>
+
     <div class="login d-flex flex-column p-3">
       <div class="fl1 d-flex flex-row justify-content-between mb-2">
+        <!-- <div class="nomorTes">1</div> -->
         <div><img src="img/Logo WA Vector.png" alt="" /> WHATSAPP</div>
         <div>Now</div>
       </div>
 
       <div class="fl2 p-2 border-1">
+        
         <p>
-          <b><img src="img/stephen.jpg" alt="" /> Stephen✨</b><p class="note" id="note1">Haii Ariaa ...<br />
-            Are you felling okay? </p> 
+          <b><img src="img/stephen.jpg" alt="" /> Stephen✨</b>
+          <p class="note" id="note1">Haii Ariaa ...<br />
+            Are you feeling okay?😁 </p> 
+          <script>
+              catatan2 = [
+              "Mudah2 an suka yo dengan buatanku. Hehe , tapii ini khususs loo. First time to build this. agak2 canggung sii😂 ",
+              "Aku ada kabar buatmu niii, kepo yaaa? 🤣",
+              "Sebenernyaa, ini si udah lama mau ku buat tapi cuman takut ajaa. Akhirnya memberanikan diri buat. Yang terpenting buat bahagia. toh aku juga seneng buatnya sampe berjam2 pun tak lakukan wkwk😂  ",
+              "Aku ada sesuatuuu....",
+              "I wish that, dan juga tetap dijaga ke mubalight annya. Awal mula sampai disini karena Alloh yang mengaturnya. jaza killahu khoiroo😊",
+              ];
+          </script>
+
+
+
+
+          <!-- <div class="d flex-row justify-content-between">
+            <div class="soal1">Perhitungan ni, hasil dari 50 + 5 = 
+              <div class="d-flex flex-row justify-content-around mt-4">
+                <button>11 <span class="one">x</span></button>
+                <button>8 <span class="two">:</span></button>
+                
+              </div>
+              <div class="d-flex flex-row justify-content-around mt-4">
+                <button>10 <span class="three">-</span></button>
+                <button>7 <span class="four">+</span></button>
+                
+              </div>
+            
+              
+            </div>
+            
+          </div> -->
           
         </p>
         <hr id="hr" />
@@ -37,7 +95,6 @@
           <button class="balas" onclick="balas()" id="balas">Baik</button
           ><button class="balas" onclick="tidak()" id="balas2">Tidak</button>
         </div>
-
         <div class="container-fluid text-center">
           <img src="gif/emotlucu.gif" alt="" class="emotlucu" />
           <button class="btnPesan" onclick="setTimeout(notes,100)">
@@ -47,10 +104,45 @@
             />
             <span class="badge" id="badge">1</span>
           </button>
+          <button class="img_kado" onclick="playButton1()" type="button"data-bs-toggle="modal" data-bs-target="#modalKado">
+            <img src="img/kado.png" >
+          </button>
+          <!-- Kado -->
+          
         </div>
       </div>
     </div>
+  
+    
+    <!-- tampilan kado -->
 
+
+<!-- Modal -->
+<div class="modal fade" id="modalKado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+      </div>
+      <div class="modal-body text-center">
+        <p  class="titleBingkai">Aria</p>
+        <img src="img/bingkai mawar.png" alt="" style="max-width: 300px; margin-top: -50px;" >
+        <img src="img/bingkai jadi.png" alt="" style="max-width: 300px; margin-top: -40px;">
+        
+        <p>Semangatt Kuliahnya, bisa bahagiakan keluarga terutama diri sendiri yoo.</p>
+        <i>"Tomorrow is mystery , Yesterday is story , today is gift"</i>
+        <p>Go kamu pasti bisaaa🤗</p>
+        
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="setTimeout(notes,100)">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
     <audio id="song" autoplay loop>
       <source
         src="music/Itsumo nando demo - kimura yumi (Spirted away AMV) Lyric dan terjemah (320 kbps).mp3"
@@ -74,5 +166,6 @@
     -->
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+ 
   </body>
 </html>
