@@ -12,7 +12,7 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("img/655047.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: right;
   background-repeat: no-repeat;
   min-height: 100vh;
   overflow: hidden;
@@ -94,13 +94,8 @@ body {
   max-width: 150px;
 }
 
-.emotlucu {
-  position: absolute;
-  left: 50%;
-  display: none;
-  animation: 1s emotlucu linear infinite;
-}
-.btnPesan {
+.btnPesan,
+.kirimPesan {
   background: rgba(255, 255, 255, 0.5);
   color: black;
   font-weight: bold;
@@ -113,6 +108,34 @@ body {
   animation: 1s btnPesan linear infinite;
   transform: translateX(-50%) translateY(40px);
 }
+.kirimPesan {
+  display: none;
+  background: var(--ijoHover);
+  color: white;
+  font-family: "Edu NSW ACT Foundation", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.iconPesan {
+  position: absolute;
+  left: 32%;
+  transform: translateX(-50%) translateY(-5px);
+}
+.inputPesan {
+  background: var(--ijo) !important;
+  color: white !important;
+  border: none !important;
+}
+.modalPesan {
+  background: var(--ijoHover) !important;
+  font-family: "Edu NSW ACT Foundation", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
+
 .btnPesan .badge {
   position: absolute;
   top: -10px;
@@ -135,6 +158,10 @@ body {
   min-width: 80px;
 }
 
+.btnKirim:hover {
+  opacity: 0.5;
+}
+
 .titleBingkai {
   position: absolute;
   left: 50%;
@@ -155,85 +182,7 @@ body {
     transform: translateX(-50%) translateY(30px);
   }
 }
-@keyframes emotlucu {
-  0% {
-    transform: translateX(-50%) translateY(-5px);
-  }
-  50% {
-    transform: translateX(-50%) translateY(5px);
-  }
-  100% {
-    transform: translateX(-50%) translateY(-5px);
-  }
-}
 
 .peluk {
   min-width: 70px;
 }
-/* 
-.nomorTes {
-  position: absolute;
-  left: 50%;
-  font-size: 1rem;
-  font-weight: 600;
-  transform: translateX(-50%) translateY(-40px);
-  background: var(--ungu);
-  padding: 15px 22px 15px 22px;
-  border-radius: 50%;
-  border: 2px solid white;
-  color: white;
-}
-.soal1 {
-  display: none;
-} 
-
-.soal1 button {
-  width: 30%;
-  border-radius: 20px;
-  padding: 5px 0 5px 0;
-  border: 3px solid var(--ijo);
-  color: var(--ijo);
-  font-weight: 600;
-}
-.soal1 button:hover {
-  background-color: #074337;
-  color: white;
-  border: 3px solid var(--ijoHover);
-}
-.soal1 span {
-}
-
-.soal1 .one,
-.three {
-  position: absolute;
-  left: 44%;
-  font-size: 16px;
-  font-weight: 600;
-  transform: translateX(-50%) translateY(-20px);
-  background: var();
-  border: 3px solid var(--ungu);
-  padding: 0 10px 5px 10px;
-  border-radius: 50%;
-  background: var(--ungu);
-  color: white;
-}
-.soal1 .three {
-  padding: 0 11px 5px 11px;
-}
-.soal1 .two,
-.four {
-  position: absolute;
-  left: 62%;
-  font-size: 16px;
-  font-weight: 600;
-  transform: translateX(-50%) translateY(-20px);
-  background: var();
-  border: 3px solid var(--ungu);
-  padding: 0px 12px 5px 12px;
-  border-radius: 50%;
-  background: var(--ungu);
-  color: white;
-}
-.soal1 .four {
-  padding: 0px 8px 5px 8px;
-} */

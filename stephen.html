@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&display=swap" rel="stylesheet">
     <title>To Aria</title>
     <style>
             
@@ -29,22 +30,10 @@
     
     <div class="time container-fluid text-center"><a id="time">10:00</a> 
       <p id="hari">Wednesday, 10 March</p></div>
-      <script>
-        var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-          var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
-
-          let time = new Date();
-          let minutes = time.getMinutes() > 9 ? time.getMinutes() : "0"+time.getMinutes();
-          let tanggal = myDays[time.getDay()] + ", " + time.getDate() + " " + months[time.getMonth()] ;
-
-          document.getElementById('time').innerHTML = time.getHours() + ":" + minutes;
-          document.getElementById('hari').innerHTML = tanggal;
-
-      </script>
 
     <div class="login d-flex flex-column p-3">
       <div class="fl1 d-flex flex-row justify-content-between mb-2">
-        <!-- <div class="nomorTes">1</div> -->
+        
         <div><img src="img/Logo WA Vector.png" alt="" /> WHATSAPP</div>
         <div>Now</div>
       </div>
@@ -57,35 +46,14 @@
             Are you feeling okay?😁 </p> 
           <script>
               catatan2 = [
-              "Mudah2 an suka yo dengan buatanku. Hehe , tapii ini khususs loo. First time to build this. agak2 canggung sii😂 ",
-              "Aku ada kabar buatmu niii, kepo yaaa? 🤣",
-              "Sebenernyaa, ini si udah lama mau ku buat tapi cuman takut ajaa. Akhirnya memberanikan diri buat. Yang terpenting buat bahagia. toh aku juga seneng buatnya sampe berjam2 pun tak lakukan wkwk😂  ",
+              "Mudah2 an suka yo dengan buatanku. Hehe , tapii ini khususs loo. First time to build this. agak2 canggung sii ",
+              "Aku ada kabar buatmu niii, kepo yaaa? ",
+              "Sebenernyaa, ini si udah lama mau ku buat tapi cuman takut ajaa. Akhirnya memberanikan diri buat. Yang terpenting buat bahagia. toh aku juga seneng buatnya sampe berjam2 pun tak lakukan wkwk  ",
               "Aku ada sesuatuuu....",
               "I wish that, dan juga tetap dijaga ke mubalight annya. Awal mula sampai disini karena Alloh yang mengaturnya. jaza killahu khoiroo😊",
+              "Itu aja si...😂"
               ];
           </script>
-
-
-
-
-          <!-- <div class="d flex-row justify-content-between">
-            <div class="soal1">Perhitungan ni, hasil dari 50 + 5 = 
-              <div class="d-flex flex-row justify-content-around mt-4">
-                <button>11 <span class="one">x</span></button>
-                <button>8 <span class="two">:</span></button>
-                
-              </div>
-              <div class="d-flex flex-row justify-content-around mt-4">
-                <button>10 <span class="three">-</span></button>
-                <button>7 <span class="four">+</span></button>
-                
-              </div>
-            
-              
-            </div>
-            
-          </div> -->
-          
         </p>
         <hr id="hr" />
         <div
@@ -96,7 +64,7 @@
           ><button class="balas" onclick="tidak()" id="balas2">Tidak</button>
         </div>
         <div class="container-fluid text-center">
-          <img src="gif/emotlucu.gif" alt="" class="emotlucu" />
+          
           <button class="btnPesan" onclick="setTimeout(notes,100)">
             <img src="img/Logo WA Vector.png" alt="" /><img
               src="img/stephen.jpg"
@@ -104,9 +72,13 @@
             />
             <span class="badge" id="badge">1</span>
           </button>
+          <button class="kirimPesan"  data-bs-toggle="modal" data-bs-target="#kirimPesan">
+            <img src="img/Logo WA Vector.png" alt="" /> Kirim Pesan
+          </button>
           <button class="img_kado" onclick="playButton1()" type="button"data-bs-toggle="modal" data-bs-target="#modalKado">
             <img src="img/kado.png" >
           </button>
+          
           <!-- Kado -->
           
         </div>
@@ -114,10 +86,45 @@
     </div>
   
     
-    <!-- tampilan kado -->
 
 
 <!-- Modal -->
+
+    <!-- Tampilan Kirim Pesan -->
+
+<div class="modal fade" id="kirimPesan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modalPesan">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Kirim Pesan <img src="img/icon gibli.png" class="iconPesan" alt="" width="20"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="row g-3"  method="post" id="kirimWa">
+          <div class="col-lg-12">
+            <input type="text" class="form-control inputPesan" id="Wa" placeholder="Tulis...">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <p>To : Stephen✨</p>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btnKirim"  onclick="kirimWa()"><img src="img/kirim.png" alt="" width="40"></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function kirimWa(){
+    const form = document.getElementById('kirimWa');
+    const name = form.elements['Wa'];
+    window.location.href = "https://wa.me/6289985620108861/?text=" + name.value ;
+  }
+</script>
+
+     <!-- tampilan kado -->
+
 <div class="modal fade" id="modalKado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -159,12 +166,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    -->
-
+ 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
  
   </body>
